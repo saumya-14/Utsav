@@ -142,8 +142,7 @@ export type CreateUserParams = {
     params: string
     keysToRemove: string[]
   }
-  
   export type SearchParamProps = {
-    params: { id: string }
-    searchParams: { [key: string]: string | string[] | undefined }
-  }
+    params: Promise<{ id: string }> | any; // Allow params to be a Promise or resolved object
+    searchParams: Record<string, string | string[] > |any;
+  };
